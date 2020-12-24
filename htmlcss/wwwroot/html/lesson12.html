@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" value="get data" onclick="GetData()" />
+    <script>
+        function GetData() {
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function () {
+                if (req.readyState === 4) {
+                    const res = JSON.parse(req.responseText);
+                    for (let i = 0; i < res.data.length; i++) {
+                        console.log(res.data[i].email);
+                    }
+                }
+            };
+            req.open("GET", "https://reqres.in/api/users");
+            req.send(null);
+        }
+    </script>
+</body>
+</html>

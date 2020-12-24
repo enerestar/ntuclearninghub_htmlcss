@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="someserver" method="post" onsubmit="return CheckValidation">
+        Name :- <input type="text" id="nameid" placeholder="enter some value" /><br />
+        Age :- <input type="text" id="ageid" /><br />
+        Email :- <input type="text" id="emailid" /><br />
+        Citizen no. :- <input type="text" id="citizenid" /><br />
+        <input type="submit" value="submit" />
+        <input type="button" value="button" onclick="CheckValidation()" />
+
+    </form>
+    <script>
+
+        function CheckCitizen(value, errmsg) {
+            var pattern = /^[A-Za-z]{1,1}[0-9]{7,7}[A-Za-z]{1,1}$/
+            if (String(value).search(pattern) == -1) {
+                alert(errmsg);
+                return false;
+            }
+            return true;
+        }
+
+        function CheckRequired(value, errmsg) {
+            if (value.length == 0) {
+                alert(errmsg);
+                return false;
+            }
+            return true;
+        }
+        function CheckValidation() {
+            var nameid = document.getElementById("nameid");
+            var ageid = document.getElementById("ageid");
+            var emailid = document.getElementById("emailid");
+            var citiid = document.getElementById("citizenid");
+
+            if (CheckCitizen(citi, "rrr" == false)) {
+                return false;
+            } 
+            if (CheckRequired(nameid.value, "Name is required ") == false) {
+                return false;
+            }
+            if (CheckRequired(ageid.value, "Age is required ") == false) {
+                return;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <a href="lesson1.html">Go to lesson 1</a>
+    <br />
+    <a href="lesson2.html">Go to lesson 2</a>
+    <form id="formid1">
+        Name :- <input type="text" id="nameid1" value="Serene" /><br />
+        Amount :- <input type="text" id="amountid1" /><br />
+    </form><br />
+    <form id="formid2">
+        Name :- <input type="text" id="nameid2" value="Serene2" /><br />
+        Amount :- <input type="text" id="amountid2" /><br />
+    </form>
+    <input type="button" value="click" onclick="SimpleDom()" />
+    <input type="button" value="click" onclick="QueryDom()" />
+
+    <script>
+        function SimpleDom() {
+            alert(document.getElementById('nameid2').value)
+        }
+        function QueryDom() {
+            var selected = document.querySelector("input[type=text]");
+            alert(selected.value);
+            var select = document.querySelectorAll("input[type=text]");
+            for (i = 0; i < select.length; i++) {
+                var msg = select[i].value;
+                alert(msg);
+            };
+        }
+    </script>
+</body>
+</html>

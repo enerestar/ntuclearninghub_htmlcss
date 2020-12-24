@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" value="Write Session" onclick="WriteSession()" /><br />
+    <input type="button" value="Read Session" onclick="ReadSession()" /><br />
+    <input type="button" value="Write Local" onclick="WriteLocal()" /><br />
+    <input type="button" value="Read Local" onclick="ReadLocal()" /><br />
+
+    <script>function WriteSession() {
+            sessionStorage.setItem("name", "serene");
+        }
+        function ReadSession() {
+            let data = sessionStorage.getItem("name");
+            alert(data);
+        }
+        function WriteLocal() {
+            localStorage.setItem("code", "234");
+        }
+        function ReadLocal() {
+            let data = localStorage.getItem("code");
+            alert(data);
+        }</script>
+</body>
+</html>

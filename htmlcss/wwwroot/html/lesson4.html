@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <ul id="VenueList">
+        <li>Room 1</li>
+        <li>Room 2</li>
+    </ul>
+    <input type="text" id="roomid"/>
+    <input type="button" value="Add a room" onclick="AddRoom()" />
+    <script>
+        function AddTextBox() {
+            <!--var frm = document.getElementById("frm123");-->
+        }
+        function AddRoom() {
+            var list = document.getElementById("VenueList");
+            var newitem = document.createElement("li");
+            newitem.textContent = document.getElementById("roomid").value; 
+            <!--newitem.textContent = "Room " + (list.children.length + 1);-->
+            list.appendChild(newitem);
+            document.getElementById("roomid").value = "";
+        }
+    </script>
+</body>
+</html>
